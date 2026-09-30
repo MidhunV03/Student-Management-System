@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">STUDENT MANAGEMENT</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navItems">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navItems"> 
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+    </nav>  
+
+    <div class="container mt-5"> 
+        <div class="d-flex align-items-center">
+            <h1>ALL STUDENTS</h1>
+            <input class="ms-auto me-1" id="studentSearchInput" placeholder="Search..">
+            <button class="btn btn-dark rounded-4 me-0 h-25" data-bs-toggle="modal" data-bs-target="#addStudentModal">Add Student </button>
+        </div>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Course</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentDetailsRow">
+                <!-- <tr >
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="addStudentModal">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label class="form-label" for="idEntryModal">Id</label>
+                        <input class="form-control mb-3" id="idEntryModal" type="number" name="idEntryModal" required>
+                        <label class="form-label" for="nameEntryModal">Name</label>
+                        <input class="form-control mb-3" id="nameEntryModal" name="nameEntryModal" type="text" required>
+                        <label class="form-label" for="ageEntryModal">Age</label>
+                        <input class="form-control mb-3" id="ageEntryModal" name="ageEntryModal" type="number" required>
+                        <label class="form-label" for="courseEntryModal">Course</label>
+                        <input class="form-control mb-3" id="courseEntryModal" name="courseEnteryModal" type="text" required>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" id="addBtn">ADD</button>
+                    <button class="btn btn-dark" id="clearBtn">CLEAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="editStudentModal">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label class="form-label" for="idEditModal">Id</label>
+                        <input class="form-control mb-3" id="idEditModal" type="number" name="idEditModal" required>
+                        <label class="form-label" for="nameEditModal">Name</label>
+                        <input class="form-control mb-3" id="nameEditModal" name="nameEditModal" type="text" required>
+                        <label class="form-label" for="ageEditModal">Age</label>
+                        <input class="form-control mb-3" id="ageEditModal" name="ageEditModal" type="number" required>
+                        <label class="form-label" for="courseEditModal">Course</label>
+                        <input class="form-control mb-3" id="courseEditModal" name="courseEnteryModal" type="text" required>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" id="addBtn">ADD</button>
+                    <button class="btn btn-dark" id="clearBtn">CLEAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": 3,
+      "name": "Sweatha",
+      "age": 20,
+      "course": "Computer Science"
+    },
+    {
+      "id": 4,
+      "name": "Dharun",
+      "age": "18",
+      "course": "IT"
+    },
+    {
+      "id": 1,
+      "name": "Midhun",
+      "age": "22",
+      "course": "Computer Science"
+    },
+    {
+      "id": 2,
+      "name": "Chinese",
+      "age": 21,
+      "course": "Computer Science"
+    }
+  ]
+}
