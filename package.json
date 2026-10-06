@@ -4,7 +4,7 @@
   "description": "First Time Builting a Node and Express Project ",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app.js",
     "dev": "nodemon src/app.js"
   },
   "author": "",
