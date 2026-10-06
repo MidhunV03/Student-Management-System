@@ -1,6 +1,8 @@
 const data = require('../data/studentJson.json');
 const fs = require('fs');
 
+const jsonPath = './src/data/studentJson.json';
+ 
 const getStudents = function(req,res){
     try
     {
@@ -19,7 +21,7 @@ const getNewStudent = function(req ,res){
 
         data.students.push(newStudent);
 
-        fs.writeFileSync('./src/data/studentJson.json',
+        fs.writeFileSync(jsonPath,
             JSON.stringify(data, null, 2));
 
         res.status(201).json(newStudent);
@@ -43,7 +45,7 @@ const deleteStudent = function(req,res){
         {
             data.students.splice(index,1);
 
-            fs.writeFileSync('./src/data/studentJson.json',
+            fs.writeFileSync(jsonPath,
                 JSON.stringify(data,null,1)
             );
             res.status(201).json({
@@ -57,8 +59,41 @@ const deleteStudent = function(req,res){
     }
 }
 
+const updateStudent = function(req,res){
+    try
+    {
+        const studentID = Number(req.params.id);
+
+        const index = data.students.findIndex(student =>{
+            return student.id === studentID;
+        })
+
+        if(index === -1)
+        {
+            res.send(400).json({
+                message : "Student not found"
+            })
+        }
+
+        data.students[index] = req.body;
+
+        fs.writeFileSync(jsonPath,
+            JSON.stringify(data,null,1)
+        );
+        
+        res.status(201).json({
+             message : "Student Updated Successfully"
+        });
+    }
+    catch(error)
+    {
+        
+    }
+}
+
 module.exports ={
     getStudents,
     getNewStudent,
-    deleteStudent
+    deleteStudent,
+    updateStudent
 }

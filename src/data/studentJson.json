@@ -1,28 +1,124 @@
 {
   "students": [
-    {
-      "id": 3,
-      "name": "Sweatha",
-      "age": 20,
-      "course": "Computer Science"
-    },
-    {
-      "id": 4,
-      "name": "Dharun",
-      "age": "18",
-      "course": "IT"
-    },
-    {
-      "id": 1,
-      "name": "Midhun",
-      "age": "22",
-      "course": "Computer Science"
-    },
-    {
-      "id": 2,
-      "name": "Chinese",
-      "age": 21,
-      "course": "Computer Science"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Mid",
+    "age": 22,
+    "course": "Computer Science"
+  },
+  {
+    "id": 2,
+    "name": "Arun",
+    "age": 21,
+    "course": "Information Technology"
+  },
+  {
+    "id": 3,
+    "name": "Kavin",
+    "age": 23,
+    "course": "Software Engineering"
+  },
+  {
+    "id": 4,
+    "name": "Rahul",
+    "age": 20,
+    "course": "Computer Applications"
+  },
+  {
+    "id": 5,
+    "name": "Vishal",
+    "age": 22,
+    "course": "Data Science"
+  },
+  {
+    "id": 6,
+    "name": "Sanjay",
+    "age": 21,
+    "course": "Artificial Intelligence"
+  },
+  {
+    "id": 7,
+    "name": "Pranav",
+    "age": 23,
+    "course": "Cyber Security"
+  },
+  {
+    "id": 8,
+    "name": "Ajay",
+    "age": 20,
+    "course": "Information Technology"
+  },
+  {
+    "id": 9,
+    "name": "Dinesh",
+    "age": 22,
+    "course": "Computer Science"
+  },
+  {
+    "id": 10,
+    "name": "Hari",
+    "age": 21,
+    "course": "Web Development"
+  },
+  {
+    "id": 11,
+    "name": "Surya",
+    "age": 24,
+    "course": "Data Analytics"
+  },
+  {
+    "id": 12,
+    "name": "Vijay",
+    "age": 22,
+    "course": "Software Engineering"
+  },
+  {
+    "id": 13,
+    "name": "Naveen",
+    "age": 20,
+    "course": "Computer Applications"
+  },
+  {
+    "id": 14,
+    "name": "Rohit",
+    "age": 23,
+    "course": "Artificial Intelligence"
+  },
+  {
+    "id": 15,
+    "name": "Suresh",
+    "age": 21,
+    "course": "Cyber Security"
+  },
+  {
+    "id": 16,
+    "name": "Mohan",
+    "age": 22,
+    "course": "Computer Science"
+  },
+  {
+    "id": 17,
+    "name": "Adithya",
+    "age": 20,
+    "course": "Data Science"
+  },
+  {
+    "id": 18,
+    "name": "Lokesh",
+    "age": 24,
+    "course": "Information Technology"
+  },
+  {
+    "id": 19,
+    "name": "Gokul",
+    "age": 21,
+    "course": "Web Development"
+  },
+  {
+    "id": 20,
+    "name": "Vignesh",
+    "age": 23,
+    "course": "Computer Science"
+  }
+]
 }

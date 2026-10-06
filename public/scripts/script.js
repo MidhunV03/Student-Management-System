@@ -16,7 +16,7 @@ function renderStudent(data)
 
             <td>
             <button class="btn btn-danger deleteBtn" data-id="${element.id}"><i class="bi bi-trash3"></i></button>
-            <button class="btn btn-warning editBtn" data-id="${element.id}"><i class="bi bi-pen"></i></button>
+            <button class="btn btn-warning openEditModalBtn" data-id="${element.id}"><i class="bi bi-pen"></i></button>
             </td>
             `
 
@@ -134,12 +134,73 @@ async function deleteStudent(id) {
 
 }
 
-document.addEventListener('click',async function(event) {
+function openEditModal(id)
+{
+    const modalElement = document.querySelector('#editStudentModal')
+    const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+    modal.show();
+
+    const respectiveStudent = allStudents.filter(student => {
+        return student.id == id;
+    });
     
-    const btn = event.target.closest('.deleteBtn');
-    if (!btn) return;
-    const id = btn.dataset.id;
-    deleteStudent(id);  
+    document.getElementById('idEditModal').value = respectiveStudent[0].id;
+    document.getElementById('nameEditModal').value = respectiveStudent[0].name;
+    document.getElementById('ageEditModal').value = respectiveStudent[0].age;
+    document.getElementById('courseEditModal').value = respectiveStudent[0].course  ;
+}
+
+document.getElementById('saveChangesBtn').addEventListener('click',async function(){
+    const updatedDetails = {
+        id : Number(document.getElementById('idEditModal').value),
+        name : document.getElementById('nameEditModal').value,
+        age : Number(document.getElementById('ageEditModal').value),
+        course : document.getElementById('courseEditModal').value,
+    }
+
+    try{
+
+        const response = await fetch(`/student/${updatedDetails.id}`,{
+        method : "PUT",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify(updatedDetails)
+        })
+
+        if (response.ok) {
+            getStudents();
+            const modalElement = document.querySelector('#editStudentModal');
+            const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+            modal.hide();
+            window.alert('student updated');
+        }
+        else {
+            console.log("Unable to update student");
+        }
+    }
+    catch(error)
+    {
+        console.error("Update Error",error);
+    }
+})
+
+document.addEventListener('click',async function(event) {
+
+    if(event.target.closest('.deleteBtn'))
+    {
+        const btn = event.target.closest('.deleteBtn');
+        if(!btn) return;
+        const id = btn.dataset.id;
+        deleteStudent(id);  
+    }
+    else if(event.target.closest('.openEditModalBtn'))
+    {
+        const btn = event.target.closest('.openEditModalBtn');
+        if (!btn) return;
+        const id = Number(btn.dataset.id);
+        openEditModal(id);
+    }
     
     
     // getStudents();

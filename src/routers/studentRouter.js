@@ -6,6 +6,8 @@ router.get('/',functions.getStudents);
 
 router.post('/',functions.getNewStudent);
 
-router.delete('/:id',functions.deleteStudent)
+router.delete('/:id',functions.deleteStudent);
+
+router.put('/:id',functions.updateStudent);
 
 module.exports = router;
