@@ -27,7 +27,7 @@ function renderStudent(data)
 async function getStudents() {
     
     try{        
-        const response = await fetch('/student/');
+        const response = await fetch('https://student-management-api-fcxk.onrender.com/student/');
         const data = await response.json();
         
         const sortedData = data.sort((a,b) => a.id - b.id)
@@ -53,7 +53,7 @@ document.getElementById('addBtn').addEventListener('click',async function(){
 
     try
     {
-        const response = await fetch('/student/',{
+        const response = await fetch('https://student-management-api-fcxk.onrender.com/student/',{
             method : "POST",
             headers : {
                 "content-type" : "application/json"
@@ -113,7 +113,7 @@ async function deleteStudent(id) {
     
     try
     {
-        const response = await fetch(`/student/${id}`,{
+        const response = await fetch(`https://student-management-api-fcxk.onrender.com/student/${id}`,{
             method : "DELETE"
         })
 
@@ -160,7 +160,7 @@ document.getElementById('saveChangesBtn').addEventListener('click',async functio
 
     try{
 
-        const response = await fetch(`/student/${updatedDetails.id}`,{
+        const response = await fetch(`https://student-management-api-fcxk.onrender.com/student/${updatedDetails.id}`,{
         method : "PUT",
         headers : {
             "content-type" : "application/json"

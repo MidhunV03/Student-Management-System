@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const StudentRouter = require('./routers/studentRouter.js');
+app.use(cors());    
 app.use(express.json());    
 
 app.use('/student',StudentRouter);
